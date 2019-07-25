@@ -8,7 +8,7 @@ subtitle: Have fun with Swiftplaygrounds
 description:
 keywords:
 author: Mr. C
-language: zh-CN
+language: en-US
 timezone: Asia/Shanghai
 
 # URL
@@ -82,3 +82,30 @@ deploy:
   repo: https://github.com/nemoworks/swiftplaygrounds.fun
   branch: gh-pages
   message: 
+
+qiniu:
+  offline: false
+  sync: true
+  bucket: nemoworks
+  # secret_file: sec/qn.json or C:
+  access_key: F1sFdth7B0QirUZ4gyFuv8DRQN98zj-gh4r5Dbzo
+  secret_key: DBvoen9cqUzJc8SEnNa173K1gI1LfmL74u03z-6w
+  dirPrefix: 
+  urlPrefix: http://cdn.nemoworks.info/
+  up_host: http://upload.qiniu.com
+  local_dir: cdn
+  update_exist: true
+  image: 
+    folder: images
+    extend: 
+  js:
+    folder: js
+  css:
+    folder: css
+  ignoring_files:
+    - '**/.DS_Store'
+
+
+types:
+  - learn
+  - project
