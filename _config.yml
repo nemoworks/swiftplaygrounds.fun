@@ -106,6 +106,8 @@ qiniu:
     folder: js
   css:
     folder: css
+  fonts:
+    folder: fonts
   ignoring_files:
     - '**/.DS_Store'
 
