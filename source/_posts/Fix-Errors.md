@@ -131,7 +131,7 @@ App开发过程中实际上会遇到各种各样的错误发生，即使再有�
 {% qnimg fixerrors/9.4.1/errors-wrongdevice-annotated.png %}
 
 
-遇到错误可以找人问，也可以在网上找答案。一个合格的程序员是必须通过网络找到自己需要的答案的，但请不要去问百度。除了Google外，一个叫StackOverflow的网站是码农必须知道的。在那里，你可以"Learn, Share, Build"。
+遇到错误可以找人问，也可以在网上找答案。一个合格的程序员是必须通过网络找到自己需要的答案的，但请不要去问百度。除了Google外，一个叫StackOverflow的网站是码农必须知道的。在那里，你可以「Learn, Share, Build」。
 
 https://stackoverflow.com/
 

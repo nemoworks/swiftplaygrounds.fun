@@ -106,3 +106,8 @@ mathjax:
   import: demand # global or demand
   ## global: all pages will load mathjax,this will degrade performance and some grammers may be parsed wrong.
   ## demand: Recommend option,if your post need fomula, you can declare 'mathjax: true' in Front-matter
+index_generator:
+  path: ''
+  per_page: 10
+  order_by: 
+      date: 1
