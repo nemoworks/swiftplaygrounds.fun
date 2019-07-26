@@ -1,10 +1,10 @@
 ---
 title: 三. 让Hello World动起来
+description: HelloWorld这个App似乎过于简单了，不是么？好歹应该能跟用户互动一下，不是么？Okay，我们接着来做一个升级版本。
+categories:
+  - Learn
 date: 2018-07-02 22:49:08
 tags:
-description: HelloWorld这个App似乎过于简单了，不是么？好歹应该能跟用户互动一下，不是么？Okay，我们接着来做一个升级版本。
-category: Learn
-
 ---
 
 <!-- block -->

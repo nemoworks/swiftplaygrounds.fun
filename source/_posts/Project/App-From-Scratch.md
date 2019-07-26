@@ -1,8 +1,8 @@
 ---
 title: 一. App的诞生
-date: 2019-07-26 10:59:49
-category: Project
-
+categories:
+  - Project
+date: 2019-07-20 10:59:49
 ---
 
 <!-- block -->

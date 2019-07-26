@@ -1,7 +1,8 @@
 ---
 title: 一. 开篇：Hello World
+categories:
+  - Learn
 date: 2018-06-16 23:49:08
-category: Learn
 ---
 
 <!-- block -->

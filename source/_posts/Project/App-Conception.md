@@ -1,8 +1,8 @@
 ---
 title: 二. 构思你的App
-date: 2019-07-25 10:59:49
-category: Project
-
+categories:
+  - Project
+date: 2019-07-21 10:59:49
 ---
 
 # 构思
