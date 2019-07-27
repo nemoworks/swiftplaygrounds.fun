@@ -41,7 +41,9 @@ document.ready(
             // mobile
             document.getElementById("mobile-toggle-theme").innerText = "· Dark"
         } else {
-            document.getElementById("switch_default").checked = false;
+
+            // document.getElementById("switch_default").checked = false;
+            
             // mobile
             document.getElementById("mobile-toggle-theme").innerText = "· Dark"
         }

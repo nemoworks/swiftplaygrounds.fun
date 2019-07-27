@@ -18,7 +18,7 @@ nickname: fun@Swiftplaygrounds
 
 ### this variable is MarkDown form.
 description: Have ***fun*** with **Swiftplaygrounds**!
-avatar: http://cdn.nemoworks.info/images/swift.png
+avatar: http://cdn.nemoworks.info/swiftplaygrounds.fun/images/swift.png
 
 # main menu navigation
 ## links key words should not be changed.
@@ -88,12 +88,12 @@ time_format: H:mm:ss
 
 # stylesheets loaded in the <head>
 stylesheets:
-  - http://cdn.nemoworks.info/css/style.css
+  - http://cdn.nemoworks.info/swiftplaygrounds.fun/css/style.css
 
 # scripts loaded in the end of the body
 scripts:
-  - http://cdn.nemoworks.info/js/script.js
-  - http://cdn.nemoworks.info/js/tocbot.min.js
+  - http://cdn.nemoworks.info/swiftplaygrounds.fun/js/script.js
+  - http://cdn.nemoworks.info/swiftplaygrounds.fun/js/tocbot.min.js
     # tscanlin/tocbot: Build a table of contents from headings in an HTML document.
     # https://github.com/tscanlin/tocbot
 
