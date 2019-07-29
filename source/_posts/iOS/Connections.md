@@ -1,7 +1,7 @@
 ---
 title: 四. 两个关联（Connections）
 categories:
-  - Learn
+  - iOS
 date: 2018-08-07 11:42:54
 tags:
 ---

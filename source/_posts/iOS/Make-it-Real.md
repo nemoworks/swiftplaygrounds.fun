@@ -2,7 +2,7 @@
 title: 二. 玩真的
 description: 现在你的`HelloWorld`能在模拟器里运行了，你也肯定不满足于此。你希望玩真的。
 categories:
-  - Learn
+  - iOS
 date: 2018-06-24 21:44:35
 tags:
 ---

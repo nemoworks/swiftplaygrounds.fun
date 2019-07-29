@@ -6,7 +6,8 @@ navname: fun@Swiftplaygrounds
 
 # navigatior items
 nav:
-  Learn: /categories/Learn
+  Playgrounds: /categories/Playgrounds
+  iOS: /categories/iOS
   Project: /categories/Project
   About: /about
 
