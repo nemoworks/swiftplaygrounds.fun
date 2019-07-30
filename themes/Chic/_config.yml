@@ -12,7 +12,7 @@ nav:
   About: /about
 
 # favicon
-favicon: /favicon.ico
+favicon: http://cdn.nemoworks.info/swiftplaygrounds.fun/images/favicon.ico
 
 # Profile
 nickname: fun@Swiftplaygrounds
