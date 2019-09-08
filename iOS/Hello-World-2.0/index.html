@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+
+<title>三. 让Hello World动起来 | fun@Swiftplaygrounds</title>
+
+
+
+    <link rel="icon" href="http://cdn.nemoworks.info/swiftplaygrounds.fun/images/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="http://cdn.nemoworks.info/swiftplaygrounds.fun/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="http://cdn.nemoworks.info/swiftplaygrounds.fun/js/script.js"></script>
+    
+    <script src="http://cdn.nemoworks.info/swiftplaygrounds.fun/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">fun@Swiftplaygrounds</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/categories/Playgrounds">Playgrounds</a>
+                
+                    <a class="menu-item" href="/categories/iOS">iOS</a>
+                
+                    <a class="menu-item" href="/categories/Project">Project</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">fun@Swiftplaygrounds</a><a id="mobile-toggle-theme"></a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/categories/Playgrounds">Playgrounds</a>
+                
+                    <a class="menu-item" href="/categories/iOS">iOS</a>
+                
+                    <a class="menu-item" href="/categories/Project">Project</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">三. 让Hello World动起来</h1>
+            
+                <div class="post-meta">
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">July 2, 2018&nbsp;&nbsp;22:49:08</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/iOS/">iOS</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <!-- block -->
+
+<p>上一篇中的<code>Hello World</code>应不存在任何难度，文科生都能顺利完成。但这个App似乎过于简单了，不是么？好歹应该能跟用户互动一下，不是么？Okay，我们接着来做一个升级版本。</p>
+<!-- block -->
+
+<p>你肯定已经关闭了你的Xcode，现在重现运行起来，在之前选择<code>Create a new Xcode project</code>的启动窗口右边是最近你打开过的Xcode项目列表，这个列表中应该有你的<code>Hello World</code>，点击打开这个项目。</p>
+<img src="http://cdn.nemoworks.info/swiftplaygrounds.fun/images/helloworld2.0/9.4.1/open-annotated.png">
+
+<!-- ![打开](/images/helloworld2.0/9.4.1/open-annotated.png) -->
+
+
+
+<p>当然，你也可以在macOS的Finder应用中找到你之前保存你的<code>Hello World</code>工程的文件夹然后双击<code>HelloWorld.xcodeproj</code>这个文件（其实它不是个文件，也是个文件夹，在macOS中叫做一个bundle，这个后面再详细说）。</p>
+<img src="http://cdn.nemoworks.info/swiftplaygrounds.fun/images/helloworld2.0/9.4.1/finder-annotated.png">
+
+<!-- ![finder](/images/helloworld2.0/9.4.1/finder-annotated.png) -->
+
+
+<p>刚才说了，我们希望至少这个iOS app是能跟用户互动起来的，要做到这一点，我们接下来做三件事。这三件事以后会反复做，这是让你成为一个能写iOS App的高手的第一招，所以你要学会。</p>
+<ol>
+<li>在界面上添加能引起互动的元素</li>
+<li>写一点代码告诉系统互动的内容</li>
+<li>连接界面元素和代码建立互动关系</li>
+</ol>
+<p>当然，现在直接说要做这三件事你可能并不明白其中的含义。我们一件件来。</p>
+<h3 id="在界面上添加能引起互动的元素"><a href="#在界面上添加能引起互动的元素" class="headerlink" title="在界面上添加能引起互动的元素"></a>在界面上添加能引起互动的元素</h3><p>打开工程后，跟上次添加那个文字标签（<code>Label</code>）很类似，先用鼠标在左边<code>1</code>所示选中那个<code>Main.storyboard</code>，然后点击<code>2</code>所示的那个如同铜钱一般的按钮，再在下面的列表中选中<code>3</code>所示的<code>Button</code>（这个列表其实很长，你需要滚动找到这个<code>Button</code>）。然后如第4步所示，选中后请直接用你的鼠标或者Trackpad拖动这个<code>Button</code>，放置到窗口中间那个矩形区域中。</p>
+<img src="http://cdn.nemoworks.info/swiftplaygrounds.fun/images/helloworld2.0/9.4.1/addbutton-annotated.png">
+
+
+<!-- ![添加一个按钮](/images/helloworld2.0/9.4.1/addbutton-annotated.png) -->
+
+
+
+<p>点击那个显示图标 ▶ 的运行按钮，你会看到模拟器启动，看到你的App又一次运行起来，屏幕上显示出<code>Hello World</code>，文字下面有个<code>Button</code>字样的按钮。这个按钮你可以用鼠标或Trackpad去点击，但没有任何反应。这不奇怪，因为你还没告诉iOS，这个按钮点了有导致什么后果😨。</p>
+<h3 id="写一点代码告诉系统互动的内容"><a href="#写一点代码告诉系统互动的内容" class="headerlink" title="写一点代码告诉系统互动的内容"></a>写一点代码告诉系统互动的内容</h3><p>在Xcode左侧选中<code>1</code>所示那个<code>ViewController.swift</code>文件，在Xcode中间区域（编辑区）的<code>2</code>所示位置敲入代码（恭喜你第一次真正在写iOS App代码）。如下图所示。</p>
+<img src="http://cdn.nemoworks.info/swiftplaygrounds.fun/images/helloworld2.0/9.4.1/typecode-annotated.png">
+
+
+<!-- ![敲代码](/images/helloworld2.0/9.4.1/typecode-annotated.png) -->
+
+
+<p>我知道你可能从未写过代码，也看不懂这些天书的意思，没关系，照着抄就行。也许你视力不好看不清图片上的文字，没关系，我把文字放在下面，直接复制粘贴也行。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@IBAction</span> <span class="function"><span class="keyword">func</span> <span class="title">showAlert</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">let</span> alert = <span class="type">UIAlertController</span>(title: <span class="string">"警告"</span>, message: <span class="string">"⚠️皇上，您的按钮被点啦！"</span>, preferredStyle: .alert)</span><br><span class="line">    alert.addAction(<span class="type">UIAlertAction</span>(title: <span class="string">"朕知道了"</span>, style: .<span class="keyword">default</span>, handler: <span class="literal">nil</span>))</span><br><span class="line">    <span class="keyword">self</span>.present(alert, animated: <span class="literal">true</span>, completion: <span class="literal">nil</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>看，代码多美。编程多美。</p>
+<p>简单解释一下这些天书：</p>
+<img src="http://cdn.nemoworks.info/swiftplaygrounds.fun/images/helloworld2.0/9.4.1/codeexplain.png">
+
+<!-- ![天书奇谈](/images/helloworld2.0/9.4.1/codeexplain.png) -->
+
+
+
+
+<h3 id="连接界面元素和代码建立互动关系"><a href="#连接界面元素和代码建立互动关系" class="headerlink" title="连接界面元素和代码建立互动关系"></a>连接界面元素和代码建立互动关系</h3><p>在Xcode的右上角有个“双环”按钮，如下图中<code>1</code>所示，点击后你原来的编辑器会裂变为两个编辑区。我们一般把右边那个新出来的叫”辅助编辑器”。副主编辑器和原来那个（称为主编辑器）可以分别显示两个文件的内容。</p>
+<img src="http://cdn.nemoworks.info/swiftplaygrounds.fun/images/helloworld2.0/9.4.1/assistanteditor-annotated.png">
+
+
+<!-- ![副主编辑器](/images/helloworld2.0/9.4.1/assistanteditor-annotated.png) -->
+
+<p>点击<code>2</code>位置的另一个双环图标，会出来一个选择列表，按下图所示一路选择</p>
+<img src="http://cdn.nemoworks.info/swiftplaygrounds.fun/images/helloworld2.0/9.4.1/selection1-annotated.png">
+
+
+<!-- ![选择storyboard文件](/images/helloworld2.0/9.4.1/selection1-annotated.png) -->
+
+<p>再按下图所示一路选择，直至最终选择到<code>Main.storyboard(Base)</code>这个文件。</p>
+<img src="http://cdn.nemoworks.info/swiftplaygrounds.fun/images/helloworld2.0/9.4.1/selection2-annotated.png">
+
+
+<!-- ![选择storyboard文件](/images/helloworld2.0/9.4.1/selection2-annotated.png) -->
+
+<p>这时你的副主编辑器会变了模样，看到那个<code>B</code>图标后面跟着（<code>Button</code>）字样的那个，选中它（不要双击，单击即可），然后按住键盘上的<code>Control</code>键，将它拖动到左边主编辑器（这时应该显示的是那个<code>ViewController.swift</code>文件的内容）的那块你刚才敲入的新代码区域。如下图所示。</p>
+<img src="http://cdn.nemoworks.info/swiftplaygrounds.fun/images/helloworld2.0/9.4.1/connect-annotated.png">
+
+
+<!-- ![建立Connection](/images/helloworld2.0/9.4.1/connect-annotated.png) -->
+
+<p>这时候你会看到整个新敲入的那块代码会被加亮，屏幕上会显示<code>Connect Action</code>整个标签。Okay，如果这样，你可以松开键盘和鼠标。</p>
+<p>好了，我们再点击 ▶ 按钮。运行结果应该是这样的：</p>
+<img src="http://cdn.nemoworks.info/swiftplaygrounds.fun/images/helloworld2.0/9.4.1/run.png">
+
+<!-- ![运行](/images/helloworld2.0/9.4.1/run.png) -->
+
+<p>模拟器里显示<code>Hello World</code>，文字下面有个<code>Button</code>，你点击一下它试试，是不是看到这样？</p>
+<img src="http://cdn.nemoworks.info/swiftplaygrounds.fun/images/helloworld2.0/9.4.1/alert.png">
+
+
+<!-- ![运行](/images/helloworld2.0/9.4.1/alert.png) -->
+
+
+<p>如果是的话，那就是你的App对你的动作有了回应了。</p>
+<h3 id="再回顾一下"><a href="#再回顾一下" class="headerlink" title="再回顾一下"></a>再回顾一下</h3><p>我们做了三件事：</p>
+<ol>
+<li>在界面上添加能引起互动的元素</li>
+<li>写一点代码告诉系统互动的内容</li>
+<li>连接界面元素和代码建立互动关系</li>
+</ol>
+<p>这三件事实际上做了什么呢？看一下下面的解释。你能理解么？</p>
+<img src="http://cdn.nemoworks.info/swiftplaygrounds.fun/images/helloworld2.0/9.4.1/explain.png">
+
+<!-- ![运行原理解释](/images/makeitreal/9.4.1/explain.png) -->
+
+
+<!-- ![运行](/images/helloworld2.0/9.4.1/explain.png) -->
+
+
+<h3 id="🎉🎉🎉"><a href="#🎉🎉🎉" class="headerlink" title="🎉🎉🎉"></a>🎉🎉🎉</h3><p>这时你可以再次把你的iPhone接上，让你的新版Hello World运行在它上面。</p>
+
+        </div>
+
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/iOS/Connections/">四. 两个关联（Connections）</a>
+            
+            
+            <a class="next" rel="next" href="/iOS/Make-it-Real/">二. 玩真的</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© Old Cao | Powered by <a href="https://hexo.io" target="_blank">Hexo</a></span>
+    </div>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-81230481-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-81230481-1');
+    </script>
+
+</footer>
+    </div>
+</body>
+</html>

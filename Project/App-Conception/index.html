@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+
+<title>二. 构思你的App | fun@Swiftplaygrounds</title>
+
+
+
+    <link rel="icon" href="http://cdn.nemoworks.info/swiftplaygrounds.fun/images/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="http://cdn.nemoworks.info/swiftplaygrounds.fun/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="http://cdn.nemoworks.info/swiftplaygrounds.fun/js/script.js"></script>
+    
+    <script src="http://cdn.nemoworks.info/swiftplaygrounds.fun/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">fun@Swiftplaygrounds</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/categories/Playgrounds">Playgrounds</a>
+                
+                    <a class="menu-item" href="/categories/iOS">iOS</a>
+                
+                    <a class="menu-item" href="/categories/Project">Project</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">fun@Swiftplaygrounds</a><a id="mobile-toggle-theme"></a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/categories/Playgrounds">Playgrounds</a>
+                
+                    <a class="menu-item" href="/categories/iOS">iOS</a>
+                
+                    <a class="menu-item" href="/categories/Project">Project</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">二. 构思你的App</h1>
+            
+                <div class="post-meta">
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">July 21, 2019&nbsp;&nbsp;10:59:49</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/Project/">Project</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h3 id="构什么思"><a href="#构什么思" class="headerlink" title="构什么思"></a>构什么思</h3><p>构思在软件开发过程中也叫需求分析，说白了就是明确三个问题：</p>
+<ul>
+<li>你现在出于什么目的而想要开发一个App？（Why）</li>
+<li>这个App是什么样的，它帮用户解决什么问题，实现什么价值？（What）</li>
+<li>这个App通过实现哪些功能来帮助用户解决问题？（How）</li>
+</ul>
+<h3 id="一个环保App的简单构思"><a href="#一个环保App的简单构思" class="headerlink" title="一个环保App的简单构思"></a>一个环保App的简单构思</h3><p>前面提到了环保这个问题，那构思开发一个所谓的环保App首先也是考虑这三个问题。</p>
+<ul>
+<li>为什么要开发这个App？是不是希望这个App能帮助用户变得更环保？还是希望用户变得不环保？</li>
+<li>这个App是通过什么样的形式怎么实现前面这个大目标的？是天天给用户推送环保知以使得成他在做不环保事情时良心不安？还是让用户晒晒自己的环保行为以相互督促？还是让用户拼车拼团拼垃圾？</li>
+<li>在前面定下的形式下，App到底提供什么功能呢？比如要推送环保知识，那是不是实现环保主题订阅、环保内容罗列、内容详情查看等功能？如果是让用户晒自己环保行为，那是不是实现环保记录新建、编辑修改、上传保存、分享等功能？</li>
+</ul>
+<h4 id="为什么要开发这个App（Why）？"><a href="#为什么要开发这个App（Why）？" class="headerlink" title="为什么要开发这个App（Why）？"></a>为什么要开发这个App（Why）？</h4><p>第一个问题的答案很显然，大的目标当然是希望用户越来越环保，规范其环保行为。</p>
+<p>如果你不知道怎么算环保行为的话，可以去知乎上看看，上面有很多关于什么样的行为算环保行为的问答。撇开那些“使用太阳能”、“在房前屋后栽树”等宏大工程，我们也可以从小事做起。例如，参考<a href="https://www.zhihu.com/question/45764422" target="_blank" rel="noopener">《有什么环保小措施我们日常就可以做？》</a>中的内容的话，我们可以督促人们“尽量少使用一次性牙刷、一次性塑料袋、一次性水杯…… 因为制造他们所使用的石油也是一次性的”。每个人都可以做这样的小事来达到环保的目的，我们开发App不需要惊天动地，能真的做成一件事才是关键。</p>
+<h4 id="这个App应该是什么样的（What）？"><a href="#这个App应该是什么样的（What）？" class="headerlink" title="这个App应该是什么样的（What）？"></a>这个App应该是什么样的（What）？</h4><p>你需要个什么样的App来达成这个督促用户“尽量少使用一次性牙刷、一次性塑料袋、一次性水杯”呢？</p>
+<p>现在人工智能这个词很热门，很多人一上来首先想到的就是我要做一个智能App，能很神奇地实现这个目标。一般来说，这都是不现实的想法，因为他并没有想也说不出来这件神奇的事情到底是怎么发生的。就目前咱们人类的科技水平来看，在你正准备使用一次性产品的那一刹那，我们的手机以及其上运行的App现在真的还无法立刻智能地感知到、分析出你要做什么，然后出铃声大作主动来阻止你这不环保行为。</p>
+<p>那我们到底怎么实现既定的目标呢？实际上我们在构思这个App时，应该从最简单最切合实际的角度去考虑。手机没那么智能，那就退而求其次，比如让用户主动来记录自己用了什么一次性产品，通过记录让用户看到自己对一次性产品的累计使用量。App让用户看到自己用了多少，用得多了，就会产生一种内疚感，下次就会节制这种行为，起到行为约束的效果。反过来说，如果没有App记录，那人们很快就会忘记自己对一次性物品的滥用，也就不能约束自己的行为。因此，这样一个App应该是有环保意义的，而且也是切实可行的。</p>
+<h4 id="App需要实现哪些功能（How）？"><a href="#App需要实现哪些功能（How）？" class="headerlink" title="App需要实现哪些功能（How）？"></a>App需要实现哪些功能（How）？</h4><p>根据前面的分析，我们现在可以大体明确我们要做一款App来“实现用户对一次性物品使用的记录”，这是最主要的功能需求。其次，记下来的数据当然要让用户能看到每次记录的结果，或者为他汇总一段时间内的数据，从而让他对自己的行为有一个概览，这算是第二项功能。在这之外，你当然也可以在其中再加入一些功能，比如给用户推送环保相关的新闻时讯、活动信息等等。因此，大体想来你的App需要做几件事：</p>
+<ul>
+<li>当前行为记录功能；</li>
+<li>历史行为查看功能；</li>
+<li>其他信息获取功能，等。</li>
+</ul>
+<blockquote>
+<p>对于App要实现哪些功能，不一定要一次全部想清楚，实际上也许自己一下是想不太清楚的，特别是What和How。一个App的设计和开发本身就是一个不断迭代的过程，你在第一次简单想法的基础上，可以再不断完善它，而不是每次都说“我还要想仔细点，等我完善了想法后我再去做下一步”，那样的话你会始终停留在一个不成熟的想法。</p>
+</blockquote>
+<h3 id="了解你的用户，了解你的对手"><a href="#了解你的用户，了解你的对手" class="headerlink" title="了解你的用户，了解你的对手"></a>了解你的用户，了解你的对手</h3><p>虽然前面我们做了个构思，但有时候你自己可能真的想不清楚用户会需要什么，这个时候，你可以通过“用户研究”来了解用户的真实想法，他们需要什么，他们需要你做个什么样的App。</p>
+<blockquote>
+<p>用户研究是帮助明确你的App目标用户是谁，他们有没有你所想象的需求（例如愿意做环保么？），他们的日常习惯是什么（平常用手机多么？混迹在外多还是宅在家里多？什么场景下他们会产生不环保的行为？等），他们的心理意愿（愿意掏手机晒环保么？愿意看环保知识么？）等等，使用户的实际需求成为App设计开发的导向，使App更符合用户的习惯、经验和期待。你可以在从家庭成员、亲戚朋友以至于路人范围开展用户研究，形式嘛可以面对面采访或者发调研邮件等。</p>
+</blockquote>
+<p>除了了解你的用户，你还需要了解你的对手。做任何一件事情，你都需要跟现实中已有的事物进行比较，行内称为“竞品分析”。</p>
+<blockquote>
+<p>所谓就是竞品是竞争产品，竞争对手的产品，竞品分析顾名思义，是对竞争对手的产品进行比较分析。简单来说就是你首先需要了解一下跟你有同样目的的App们有哪些，他们分别是怎么做来实现跟你一样的目标的。你可以再App Store里搜索类似的App，安装并试用，分析这些竞品并明确自己的App应该是什么样。</p>
+</blockquote>
+<p>通过竞品分析，你明确并精炼自己的想法，使自己的App目标更明确，思路更清晰。你也可以通过对比跟别的App的差异，来体现自己的特色，提升自己App的竞争力（不然用户会说，已经有了其他App，我为什么需要安装使用你开发的这个呢？）</p>
+
+        </div>
+
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/Project/App-Prototyping/">三. App原型设计</a>
+            
+            
+            <a class="next" rel="next" href="/Project/App-From-Scratch/">一. App的诞生</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© Old Cao | Powered by <a href="https://hexo.io" target="_blank">Hexo</a></span>
+    </div>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-81230481-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-81230481-1');
+    </script>
+
+</footer>
+    </div>
+</body>
+</html>

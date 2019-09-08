@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+
+<title>第二部分 函数 (Functions) | fun@Swiftplaygrounds</title>
+
+
+
+    <link rel="icon" href="http://cdn.nemoworks.info/swiftplaygrounds.fun/images/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="http://cdn.nemoworks.info/swiftplaygrounds.fun/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="http://cdn.nemoworks.info/swiftplaygrounds.fun/js/script.js"></script>
+    
+    <script src="http://cdn.nemoworks.info/swiftplaygrounds.fun/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">fun@Swiftplaygrounds</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/categories/Playgrounds">Playgrounds</a>
+                
+                    <a class="menu-item" href="/categories/iOS">iOS</a>
+                
+                    <a class="menu-item" href="/categories/Project">Project</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">fun@Swiftplaygrounds</a><a id="mobile-toggle-theme"></a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/categories/Playgrounds">Playgrounds</a>
+                
+                    <a class="menu-item" href="/categories/iOS">iOS</a>
+                
+                    <a class="menu-item" href="/categories/Project">Project</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">第二部分 函数 (Functions)</h1>
+            
+                <div class="post-meta">
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">July 25, 2016&nbsp;&nbsp;22:16:06</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/Playgrounds/">Playgrounds</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <p>每天我们都做很多事情，比如刷牙、吃早餐、系鞋带… 这其中每件事情要完成都需要多个步骤，拿系鞋带来说，我们先要把鞋带打成环（loop），然后交叉（swoop），最后收紧(pull)。</p>
+ <img title="绑鞋带步骤" alt="绑鞋带步骤" src="http://cdn.nemoworks.info/swiftplaygrounds.fun/images/playgrounds/functions/introduction/1s.png">
+
+<!-- ![绑鞋带步骤](/images/functions/introduction/1s.png) -->
+
+
+<p>换成计算机的语言，绑鞋带这个任务就是要执行三个命令，分别为<code>loop()</code>、<code>swoop()</code>和<code>pull()</code>，把这三个步骤合在一起并取个名字例如“绑鞋带”(tieMyShoe)，就可以定义一个函数(Function)。换而言之定义一个函数就是用简单指令合成了一个更加复杂的指令，用代码表示就是下面所示的样子：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">tieMyShoe</span><span class="params">()</span></span>&#123;</span><br><span class="line">	loop()</span><br><span class="line">	swoop()</span><br><span class="line">	pull()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>其中<code>func</code>代表现在我们自己定义一个函数，名称为<code>tieMyShoe</code>，每个函数名称后面都需要跟上一对圆括号<code>()</code>，然后用一对花括号<code>{}</code>把实现这个复杂任务的一个个简单步骤按顺序放在其中。这样定义完后，它就可以被当作一个指令来用，就跟你之前使用的<code>moveForward()</code>、<code>turnLeft()</code>和<code>collectGem()</code>是一样的。发出<code>tieMyShoe()</code>这个指令，三个步骤一次性完成。</p>
+ <img title="tieMyShoe()" alt="tieMyShoe()" src="http://cdn.nemoworks.info/swiftplaygrounds.fun/images/playgrounds/functions/introduction/2s.png">
+
+<!-- ![tieMyShoe()](/images/functions/introduction/2s.png) -->
+
+
+<p>Coooool!</p>
+
+        </div>
+
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/iOS/hello-world/">一. 开篇：Hello World</a>
+            
+            
+            <a class="next" rel="next" href="/Playgrounds/1-7 The-Shortest-Route/">1.7 找条最短的路 (The Shortest Route)</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© Old Cao | Powered by <a href="https://hexo.io" target="_blank">Hexo</a></span>
+    </div>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-81230481-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-81230481-1');
+    </script>
+
+</footer>
+    </div>
+</body>
+</html>
