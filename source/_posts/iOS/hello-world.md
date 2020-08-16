@@ -68,11 +68,10 @@ https://itunes.apple.com/us/app/xcode/id497799835?mt=12
 
 6. 模拟器运行。你的Mac上就会运行起一个虚拟的iPhone X，你看到白白的屏幕，实际上这就是你的第一个iOS App，这很让人惊奇，因为到目前位置你还没写一行代码，
 
-{% qnimg helloworld/9.4.1/simulator-annotated.png %}
-
+{% qnimg helloworld/9.4.1/simulator.png %}
 <!-- ![启动运行](/images/helloworld/9.4.1/simulator.png) -->
 
-7. 在App的界面上添加文字。正是因为你确实什么都还没干，所以上面那个iPhone X中只有白白一片。现在我们在里面加点东西。先用鼠标在左边`1`所示选中那个`Main.storyboard`，然后点击`2`所示的那个如同铜钱一般的按钮，再在下面的列表中选中`3`所示的`Label`。选中后请直接用你的鼠标或者Trackpad拖动这个`Label`，放置到窗口中间那个矩形区域中。
+1. 在App的界面上添加文字。正是因为你确实什么都还没干，所以上面那个iPhone X中只有白白一片。现在我们在里面加点东西。先用鼠标在左边`1`所示选中那个`Main.storyboard`，然后点击`2`所示的那个如同铜钱一般的按钮，再在下面的列表中选中`3`所示的`Label`。选中后请直接用你的鼠标或者Trackpad拖动这个`Label`，放置到窗口中间那个矩形区域中。
 
 {% qnimg helloworld/9.4.1/addlabel-annotated.png %}
 
