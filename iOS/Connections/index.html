@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
 
@@ -11,23 +12,23 @@
 
 
 
-    <link rel="icon" href="http://cdn.nemoworks.info/swiftplaygrounds.fun/images/favicon.ico">
+    <link rel="icon" href="https://cdn.nemoworks.info/swiftplaygrounds.fun/images/favicon.ico">
 
 
 
 
     <!-- stylesheets list from _config.yml -->
     
-    <link rel="stylesheet" href="http://cdn.nemoworks.info/swiftplaygrounds.fun/css/style.css">
+    <link rel="stylesheet" href="https://cdn.nemoworks.info/swiftplaygrounds.fun/css/style.css">
     
 
 
 
     <!-- scripts list from _config.yml -->
     
-    <script src="http://cdn.nemoworks.info/swiftplaygrounds.fun/js/script.js"></script>
+    <script src="https://cdn.nemoworks.info/swiftplaygrounds.fun/js/script.js"></script>
     
-    <script src="http://cdn.nemoworks.info/swiftplaygrounds.fun/js/tocbot.min.js"></script>
+    <script src="https://cdn.nemoworks.info/swiftplaygrounds.fun/js/tocbot.min.js"></script>
     
 
 
@@ -38,7 +39,7 @@
     
 
 
-</head>
+<meta name="generator" content="Hexo 5.2.0"></head>
 <body>
     <div class="wrapper">
         <header>
@@ -201,86 +202,86 @@
 
 <h2 id="回顾"><a href="#回顾" class="headerlink" title="回顾"></a>回顾</h2><p>先回顾一下前面三篇你所学的内容：</p>
 <ol>
-<li>在“”中你学会了打开Xcode创建一个iOS开发工程并在模拟器上运行了一个显示“Hello World”字样的最简单iOS App；</li>
-<li>在“”中你学会了把<code>Hello World</code>这个App安装到你的iPhone上运行。</li>
-<li>在“”中你学会了让你的<code>Hello World</code>动起来；</li>
+<li>在“<a href="#">Post not found: Hello-World 开篇：Hello World</a>”中你学会了打开Xcode创建一个iOS开发工程并在模拟器上运行了一个显示“Hello World”字样的最简单iOS App；</li>
+<li>在“<a href="#">Post not found: Make-it-Real 玩真的</a>”中你学会了把<code>Hello World</code>这个App安装到你的iPhone上运行。</li>
+<li>在“<a href="#">Post not found: Hello-World-2.0 让Hello World动起来</a>”中你学会了让你的<code>Hello World</code>动起来；</li>
 </ol>
 <blockquote>
 <p>Checkpoint: 此时你应该完成把App在模拟器和真机上都运行起来，你按那个按钮，屏幕上会弹出一个窗口了。</p>
 </blockquote>
-<h2 id="神奇操作"><a href="#神奇操作" class="headerlink" title="神奇操作"></a>神奇操作</h2><p>按钮被按下时那个窗口之所以会出现，是因为我们在中做了一个”神奇操作”：</p>
-<img src="http://cdn.nemoworks.info/swiftplaygrounds.fun/images/connections/9.4.1/ctrldrag.gif">
+<h2 id="神奇操作"><a href="#神奇操作" class="headerlink" title="神奇操作"></a>神奇操作</h2><p>按钮被按下时那个窗口之所以会出现，是因为我们在<a href="#">Post not found: Hello-World-2.0 上一篇</a>中做了一个”神奇操作”：</p>
+<img src="https://cdn.nemoworks.info/swiftplaygrounds.fun/images/connections/9.4.1/ctrldrag.gif">
 
 <p>这个神奇操作在我们看到的界面（Main.storyboard文件）和iPhone内部运行的代码间建立了一个关联关系（Connection），其含义就是告诉iPhone当这个按钮被按下时，应该执行<code>showAlert()</code>这段代码。</p>
-<img src="http://cdn.nemoworks.info/swiftplaygrounds.fun/images/connections/9.4.1/connectioninspector-annotated.png">
+<img src="https://cdn.nemoworks.info/swiftplaygrounds.fun/images/connections/9.4.1/connectioninspector-annotated.png">
 
 <p>当前你看到的这个关联关系的意思就是:当这个Button上发生了<code>Touch Up Inside</code>这个事件时触发<code>View Controller</code>中的<code>showAlert</code>（在工程中的ViewController.swift这个文件中的<code>showAlert()</code>函数）运行。</p>
 <h2 id="两层间的关联关系"><a href="#两层间的关联关系" class="headerlink" title="两层间的关联关系"></a>两层间的关联关系</h2><p>这里需要<strong>着重关注</strong>一下，一个App内部实际上包含了两个层面的内容（后面我们会再进一步看到第三个层面）：我们在屏幕上看到的是一层，这一层里的内容就是在<code>Main.storyboard</code>文件中我们可以绘制的用户界面；还有一层是在你所看到的用户界面以下的，也就是<code>ViewController.swift</code>文件中写的代码。代码的运行是靠界面上用户界面上的操作驱动的，如下图所示。</p>
-<img src="http://cdn.nemoworks.info/swiftplaygrounds.fun/images/connections/9.4.1/connection1.png">
+<img src="https://cdn.nemoworks.info/swiftplaygrounds.fun/images/connections/9.4.1/connection1.png">
 
 <p>我们之前通过神奇操作做的事情就是在这两层间建立了一个Connection，让界面上的事件（Button的触碰）去驱动代码的执行（<code>showAlert()</code>）。</p>
 <blockquote>
 <p>Checkpoint: 理解这件事很重要。你理解了么？</p>
 </blockquote>
-<p>在之前的里，我们在<code>showAlert()</code>的代码里写了那段代码：</p>
-<img src="http://cdn.nemoworks.info/swiftplaygrounds.fun/images/helloworld2.0/9.4.1/codeexplain.png">
+<p>在之前的<a href="#">Post not found: Hello-World-2.0 Hello World 2.0版</a>里，我们在<code>showAlert()</code>的代码里写了那段代码：</p>
+<img src="https://cdn.nemoworks.info/swiftplaygrounds.fun/images/helloworld2.0/9.4.1/codeexplain.png">
 
 <p>这段代码的意思就是在屏幕上显示一个警告窗口。如果现在当按钮被点到的时候我需要用户界面上的那个文字标签内容变化一下，应该怎么做呢？</p>
 <h3 id="调整关联"><a href="#调整关联" class="headerlink" title="调整关联"></a>调整关联</h3><p>按之前的思路，我们应该写一段代码（也就是跟<code>showAlert()</code>类似的一个函数，我们可以管它叫<code>changeLabel()</code>），代码中执行修改Label内容的操作，然后让button的事件关联到这段新代码。如下图所示。</p>
-<img src="http://cdn.nemoworks.info/swiftplaygrounds.fun/images/connections/9.4.1/connection-change.png">
+<img src="https://cdn.nemoworks.info/swiftplaygrounds.fun/images/connections/9.4.1/connection-change.png">
 
 <p>按此思路，我们先打开<code>ViewController.swift</code>这个文件，在原来写<code>showAlert()</code>的地方写上一个<code>changeLabel()</code>函数：</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@IBAction</span> <span class="function"><span class="keyword">func</span> <span class="title">changeLabel</span><span class="params">()</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>然后跟之前一样，做个神奇操作。（记得要打开辅助编辑器哦，还记得怎么打开么？）</p>
-<img src="http://cdn.nemoworks.info/swiftplaygrounds.fun/images/connections/9.4.1/newconnection.gif">
+<img src="https://cdn.nemoworks.info/swiftplaygrounds.fun/images/connections/9.4.1/newconnection.gif">
 
 <p>这时你再选中<code>Button</code>后打开<code>Connection Inspector</code>会发现这个<code>Button</code>的<code>Touch Up Inside</code>事件关联到两个函数了。下面我们只需要按钮按下时去驱动<code>changeLabel()</code>执行，所以可以点那个小叉叉删掉不需要的那个关联关系。</p>
-<img src="http://cdn.nemoworks.info/swiftplaygrounds.fun/images/connections/9.4.1/deleteconnection-annotated.png">
+<img src="https://cdn.nemoworks.info/swiftplaygrounds.fun/images/connections/9.4.1/deleteconnection-annotated.png">
 
 <p>动画演示如下：</p>
-<img src="http://cdn.nemoworks.info/swiftplaygrounds.fun/images/connections/9.4.1/deleteconnection.gif">
+<img src="https://cdn.nemoworks.info/swiftplaygrounds.fun/images/connections/9.4.1/deleteconnection.gif">
 
 <p>你可以在<code>changeLabel()</code>里写点简单的代码来测试一下是不是按钮按下后这个函数被执行了，例如可以这样：</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@IBAction</span> <span class="function"><span class="keyword">func</span> <span class="title">changeLabel</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"changeLabel被执行"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@IBAction</span> <span class="function"><span class="keyword">func</span> <span class="title">changeLabel</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;changeLabel被执行&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>新加的这一行<code>print(&quot;changeLabel被执行&quot;)</code>我相信你能理解。点击Xcode上的 ▶ 在iPhone或模拟器上运行，当你按<code>button</code>时Xcode底部会多出一块区域，现实代码的一些输出信息，如下图。</p>
-<img src="http://cdn.nemoworks.info/swiftplaygrounds.fun/images/connections/9.4.1/output-annotated.png">
+<img src="https://cdn.nemoworks.info/swiftplaygrounds.fun/images/connections/9.4.1/output-annotated.png">
 
 <h2 id="第二类关联"><a href="#第二类关联" class="headerlink" title="第二类关联"></a>第二类关联</h2><p>下一个问题紧接着就来了，如何去改变那个文字标签的内容呢？我们如何能操作那个Label么？其实我们需要再来一个关联关系，让代码关联到界面上的某个元素，然后操作这个元素，如下图所示。</p>
-<img src="http://cdn.nemoworks.info/swiftplaygrounds.fun/images/connections/9.4.1/connection-II.png">
+<img src="https://cdn.nemoworks.info/swiftplaygrounds.fun/images/connections/9.4.1/connection-II.png">
 
 
 <p>怎么做呢？还是那个神奇的操作，不过这次不是把<code>button</code>拖过来，而是把那个<code>label</code>拖过来。</p>
-<img src="http://cdn.nemoworks.info/swiftplaygrounds.fun/images/connections/9.4.1/outletconnection.gif">
+<img src="https://cdn.nemoworks.info/swiftplaygrounds.fun/images/connections/9.4.1/outletconnection.gif">
 
 <p>如以上动画所示，我们在辅助编辑器模式下，在<code>Main.storyboard</code>里选中那个显示着<code>Hello World</code>文字的<code>Label</code>，然后按住键盘的<code>Ctrl</code>键用鼠标把这个Label拖到<code>ViewController.swift</code>编辑器的代码部分，当你鼠标拖动的时候，你会看到在某些位置出现一根蓝色提示线和提示文字<code>Insert Outlet or Outlet Connection</code>,这时就可以松开鼠标和<code>Ctrl</code>键，然后编辑器会弹出一个小窗口。</p>
-<img src="http://cdn.nemoworks.info/swiftplaygrounds.fun/images/connections/9.4.1/outletdialog.png">
+<img src="https://cdn.nemoworks.info/swiftplaygrounds.fun/images/connections/9.4.1/outletdialog.png">
 
 <p>在这个窗口中的<code>Name</code>字段填上一个字符串，例如<code>myLabel</code>然后点<code>Connect</code>。</p>
 <p>这之后你会发现你的代码里多了一行：</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@IBOutlet</span> <span class="keyword">weak</span> <span class="keyword">var</span> myLabel: <span class="type">UILabel!</span></span><br></pre></td></tr></table></figure>
 
 <p><code>myLabel</code>称之为一个“变量”，这个概念我们在后面会详细解释，目前你可以把它理解为一个“抓手”，这个”抓手”让你可以操作界面上对应的那个文字标签，然后我们在<code>changeLabel()</code>这个函数中可以添加一行实际去操作文字标签：</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@IBAction</span> <span class="function"><span class="keyword">func</span> <span class="title">changeLabel</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"changeLabel被执行"</span>)</span><br><span class="line">    myLabel.text = <span class="string">"你好！"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@IBAction</span> <span class="function"><span class="keyword">func</span> <span class="title">changeLabel</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;changeLabel被执行&quot;</span>)</span><br><span class="line">    myLabel.text = <span class="string">&quot;你好！&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p><code>myLabel.text = &quot;你好！&quot;</code>意思是把<code>myLabel</code>的内容(<code>text</code>)设置为”你好“这个字符串。</p>
 <p>点击Xcode上的 ▶ 在iPhone或模拟器上运行，当你按<code>button</code>时看看发生了什么？是不是像下面这个动画一样？</p>
-<img src="http://cdn.nemoworks.info/swiftplaygrounds.fun/images/connections/9.4.1/run-hello.gif">
+<img src="https://cdn.nemoworks.info/swiftplaygrounds.fun/images/connections/9.4.1/run-hello.gif">
 
 <h2 id="理解两类关联关系"><a href="#理解两类关联关系" class="headerlink" title="理解两类关联关系"></a>理解两类关联关系</h2><p>这个过程中的核心实际是就是我们所做的两次”神奇操作”</p>
 <ol>
 <li>我们把<code>Button</code>拖到<code>changeLabel()</code>函数上，让<code>Button</code>上发生的事件跟函数执行关联（<strong>一号关联</strong>）；</li>
 <li>我们把<code>Label</code>拖动到代码中生成了一个变量<code>myLabel</code>，这个变量关联（<strong>二号关联</strong>）到这个<code>Label</code>。</li>
 </ol>
-<img src="http://cdn.nemoworks.info/swiftplaygrounds.fun/images/connections/9.4.1/IBActionOutlet.png">
+<img src="https://cdn.nemoworks.info/swiftplaygrounds.fun/images/connections/9.4.1/IBActionOutlet.png">
 
 <p>然后运行起来后，当我们触碰那个<code>Button</code>产生一个事件，根据前一个关联关系，系统知道要执行<code>changeLabel()</code>函数，这个函数运行中，去操作<code>myLabel</code>的内容（执行<code>myLabel.text = &quot;你好！&quot;</code>），根据第二个关联关系，系统知道<code>myLabel</code>指的是界面上那个文字标签，因此将那个标签设置为了新的内容。实际上你每次点文字标签的内容都在重新设置，只是每次都设置为一样的值，所以看起来只有第一次有效。我们也可以把这句话稍加改动变成这样。</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">myLabel.text = <span class="string">"你好！"</span> + <span class="type">String</span>(arc4random_uniform(<span class="number">10</span>))</span><br></pre></td></tr></table></figure>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">myLabel.text = <span class="string">&quot;你好！&quot;</span> + <span class="type">String</span>(arc4random_uniform(<span class="number">10</span>))</span><br></pre></td></tr></table></figure>
 
 <p>这表示在”你好！”后面我们再拼接上一个随机的数字。<code>String(arc4random_uniform(10))</code>这个看不懂没有关系，到后面也许就懂了。</p>
 <p>现在再运行。</p>
-<img src="http://cdn.nemoworks.info/swiftplaygrounds.fun/images/connections/9.4.1/run-random.gif">
+<img src="https://cdn.nemoworks.info/swiftplaygrounds.fun/images/connections/9.4.1/run-random.gif">
 
 
 <h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>这一篇讲的内容很关键，是你理解iOS App开发的核心内容。为什么这么说呢？因为我们常用的iOS App就是你刚才完成的这个App的样子：</p>

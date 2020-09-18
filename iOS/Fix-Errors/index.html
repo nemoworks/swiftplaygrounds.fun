@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
 
@@ -11,23 +12,23 @@
 
 
 
-    <link rel="icon" href="http://cdn.nemoworks.info/swiftplaygrounds.fun/images/favicon.ico">
+    <link rel="icon" href="https://cdn.nemoworks.info/swiftplaygrounds.fun/images/favicon.ico">
 
 
 
 
     <!-- stylesheets list from _config.yml -->
     
-    <link rel="stylesheet" href="http://cdn.nemoworks.info/swiftplaygrounds.fun/css/style.css">
+    <link rel="stylesheet" href="https://cdn.nemoworks.info/swiftplaygrounds.fun/css/style.css">
     
 
 
 
     <!-- scripts list from _config.yml -->
     
-    <script src="http://cdn.nemoworks.info/swiftplaygrounds.fun/js/script.js"></script>
+    <script src="https://cdn.nemoworks.info/swiftplaygrounds.fun/js/script.js"></script>
     
-    <script src="http://cdn.nemoworks.info/swiftplaygrounds.fun/js/tocbot.min.js"></script>
+    <script src="https://cdn.nemoworks.info/swiftplaygrounds.fun/js/tocbot.min.js"></script>
     
 
 
@@ -38,7 +39,7 @@
     
 
 
-</head>
+<meta name="generator" content="Hexo 5.2.0"></head>
 <body>
     <div class="wrapper">
         <header>
@@ -202,66 +203,66 @@
 <p>你经常听到码农说到“Debug”这个话题，Debug的意思就是解决程序中的错误，程序员一天的工作分成两部分：先花一小半时间写代码，再花一大半时间解决代码中的错误，这就是他们的日常。因此你目前这很正常，所以你遇到了错误也不用害怕。</p>
 <p>目前你会遇到这么几种错误，先分别说一下，如果你遇到的是别的，请联系我们，以便补充。</p>
 <h3 id="代码错误"><a href="#代码错误" class="headerlink" title="代码错误"></a>代码错误</h3><p>实际上我们现在还没有正式在讲iOS App开发中用到的编程语言（Swift）的具体内容，所有的代码只要你照着抄就行，但即便这样你也很可能抄错。这样的错误发生时，你会发现在你点 ▶ 按钮想运行时Xcode给你一个错误提示显示在其顶部状态栏上，如下图：</p>
-<img src="http://cdn.nemoworks.info/swiftplaygrounds.fun/images/fixerrors/9.4.1/errors-status.png">
+<img src="https://cdn.nemoworks.info/swiftplaygrounds.fun/images/fixerrors/9.4.1/errors-status.png">
 
 <p>这行字告诉你Xcode在构造你的Hello World App时失败了（<code>Failed</code>），红色感叹号图标表示有错误发生，其右边的数字<code>1</code>代表发现的错误数是一项。当你点这个红色图标是，Xcode左侧导航栏会自动切换到第五页<code>Issue Navigator</code>（之前显示的是第一页<code>Project Navigator</code>）。这其中列出了Xcode帮你发现的错误，例如下图中Xcode告诉我们Swift Compiler发现一个错误（<code>Swift Compiler Error</code>）。Compiler是一个将我们写的代码翻译为计算机能理解并执行的代码的软件，中文叫做编译器，实际上目前我们开发软件所用的编程语言都是按我们人的思维方式和语言习惯来设计的，它们不是机器能直接理解的。<code>Swift Compiler Error</code>意思就是用来把Swift语言翻译为机器语言的编译器找到一个错误，错误具体是什么呢？是<code>Expected &#39;)&#39; in expression list</code>，也就是我们代码的某个位置缺少了一个括号。在我们用鼠标点（单击即可，双击的话Xcode会弹出一个新的编辑器窗口，你可以关闭这个新窗口）这行时，Xcode会定位到错误具体发生的位置，目前是<code>ViewController.swift</code>这个文件中的一行。</p>
-<img src="http://cdn.nemoworks.info/swiftplaygrounds.fun/images/fixerrors/9.4.1/errors-positioning-annotated.png">
+<img src="https://cdn.nemoworks.info/swiftplaygrounds.fun/images/fixerrors/9.4.1/errors-positioning-annotated.png">
 
 <p>仔细看一下代码</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">self</span>.present(alert, animated: <span class="literal">true</span>, completion: <span class="literal">nil</span></span><br></pre></td></tr></table></figure>
 
-<p>这是我故意犯的一个错误，很明显这一行最后的<code>)</code>缺失了。Swift中的括号都是要成对的，无论是圆括号<code>()</code>还是花括号<code>{}</code>，具体后面再说，这样的错误我们只要补全括号就行。</p>
+<p>这是我故意犯的一个错误，很明显这一行最后的<code>)</code>缺失了。Swift中的括号都是要成对的，无论是圆括号<code>()</code>还是花括号<code>&#123;&#125;</code>，具体后面再说，这样的错误我们只要补全括号就行。</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">self</span>.present(alert, animated: <span class="literal">true</span>, completion: <span class="literal">nil</span>)</span><br></pre></td></tr></table></figure>
 
 <p>你可能犯了类似的错误，仔细检查一下。</p>
 <h3 id="关系错乱"><a href="#关系错乱" class="headerlink" title="关系错乱"></a>关系错乱</h3><p>有时候你会发现点 ▶ 按钮运行时并没有错误，模拟器也启动了，但屏幕上白白的什么都没有，而Xcode也变为了这个样子：</p>
-<img src="http://cdn.nemoworks.info/swiftplaygrounds.fun/images/fixerrors/9.4.1/errors-crash-annotated.png">
+<img src="https://cdn.nemoworks.info/swiftplaygrounds.fun/images/fixerrors/9.4.1/errors-crash-annotated.png">
 
 <p>这次Xcode实际上并没有告诉你哪行代码写错了，但你也不用着急，看一下下方输出窗口（Output）中的文字，当前显示：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">libc++abi.dylib: terminating with uncaught exception of type NSException</span><br><span class="line">(lldb)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">libc++abi.dylib: terminating with uncaught exception of type NSException</span><br><span class="line">(lldb) </span><br></pre></td></tr></table></figure>
 
 <p>这看不懂是什么意思。没关系，往前翻至最顶部：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">2018-08-26 15:20:59.802585+0800 HelloWorld[2797:394891] *** Terminating app due to uncaught exception &apos;NSUnknownKeyException&apos;, reason: &apos;[&lt;HelloWorld.ViewController 0x7f9af3903bf0&gt; setValue:forUndefinedKey:]: this class is not key value coding-compliant for the key firstLabel.&apos;</span><br><span class="line">*** First throw call stack:</span><br><span class="line">(</span><br><span class="line">	0   CoreFoundation                      0x00000001112331e6 __exceptionPreprocess + 294</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">2018-08-26 15:20:59.802585+0800 HelloWorld[2797:394891] *** Terminating app due to uncaught exception &#39;NSUnknownKeyException&#39;, reason: &#39;[&lt;HelloWorld.ViewController 0x7f9af3903bf0&gt; setValue:forUndefinedKey:]: this class is not key value coding-compliant for the key firstLabel.&#39;</span><br><span class="line">*** First throw call stack:</span><br><span class="line">(</span><br><span class="line">	0   CoreFoundation                      0x00000001112331e6 __exceptionPreprocess + 294</span><br><span class="line">...</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p>这对你来说当然也看不懂。不过其中包含了还是具有一定可读性的文字，例如第一行写道：<code>Terminating app due to uncaught exception &#39;NSUnknownKeyException&#39;</code>，意思就是app被终止了，终止的原因是一个未被捕获的异常叫<code>NSUnknownKeyException</code>。Anyway，反正说的是app因为一个异常情况被终止了。</p>
 <p>然后继续往后读：<code>reason: &#39;[&lt;HelloWorld.ViewController 0x7f9af3903bf0&gt; setValue:forUndefinedKey:]: this class ...&#39;</code>。这句应该是在解释原因，意思是<code>HelloWorld.ViewController</code>里面有错，特别是冒号后面写道：<code>this class is not key value coding-compliant for the key firstLabel</code>。这是什么意思？这句话的字面意思解释只能以后再展开，目前我们只能先说导致这个错误的原因，当你运行出错后在Output窗口看到Xcode报出<code>this class is not key value coding-compliant for the key XXX</code>这一的错误理由时，那说明你的App中存在错误的关联关系（Connection）。还记得Connection么？</p>
-<img src="http://cdn.nemoworks.info/swiftplaygrounds.fun/images/connections/9.4.1/IBActionOutlet.png">
+<img src="https://cdn.nemoworks.info/swiftplaygrounds.fun/images/connections/9.4.1/IBActionOutlet.png">
 
 <p>关联关系哪里错了呢？我们需要来检查一下，看一下目前有哪些Connections。之前说了，打开<code>Main.storyboard</code>这个文件后在其用户界面上选中button或label组件后，右侧工具栏选择最后一个<code>Connection Inspector</code>可以看到这个组件的关联状态。</p>
-<img src="http://cdn.nemoworks.info/swiftplaygrounds.fun/images/fixerrors/9.4.1/errors-inspector-annotated.png">
+<img src="https://cdn.nemoworks.info/swiftplaygrounds.fun/images/fixerrors/9.4.1/errors-inspector-annotated.png">
 
 <p>上图显示这个button的<code>Touch Up Inside</code>事件关联到<code>changeLabel()</code>这个函数的执行。检查一下<code>ViewController.swift</code>代码文件，你发现这段代码确实存在。</p>
-<img src="http://cdn.nemoworks.info/swiftplaygrounds.fun/images/fixerrors/9.4.1/errors-viewcontroller-annotated.png">
+<img src="https://cdn.nemoworks.info/swiftplaygrounds.fun/images/fixerrors/9.4.1/errors-viewcontroller-annotated.png">
 
 <p>继续检查，选中Label，看<code>Connection Inspector</code></p>
-<img src="http://cdn.nemoworks.info/swiftplaygrounds.fun/images/fixerrors/9.4.1/errors-iboutlet-annotated.png">
+<img src="https://cdn.nemoworks.info/swiftplaygrounds.fun/images/fixerrors/9.4.1/errors-iboutlet-annotated.png">
 
 <p>我看到我的这个Label有两个Connections，分别关联到<code>myLabel</code>和<code>firstLabel</code>，检查一下<code>ViewController.swift</code>代码文件，你发现这段代码里只存在<code>myLabel</code>，而不存在<code>firstLabel</code>。</p>
-<img src="http://cdn.nemoworks.info/swiftplaygrounds.fun/images/fixerrors/9.4.1/errors-viewcontroller-annotated2.png">
+<img src="https://cdn.nemoworks.info/swiftplaygrounds.fun/images/fixerrors/9.4.1/errors-viewcontroller-annotated2.png">
 
 <p>至此我们找到了错误的原因：界面上那个Label建立的<code>firstLabel</code>关联在代码中消失了。修正这个错误很简单，只要点击那个Connection上的✖️即可。</p>
-<img src="http://cdn.nemoworks.info/swiftplaygrounds.fun/images/fixerrors/9.4.1/errors-iboutlet-remove.png">
+<img src="https://cdn.nemoworks.info/swiftplaygrounds.fun/images/fixerrors/9.4.1/errors-iboutlet-remove.png">
 
 <p>第二种错误在初学时也经常会犯，且不那么容易被直接发现，产生的原因一般都是你在某个时刻通过那个魔法操作创建了一个界面元素与代码关联，但之后又在代码中删除了关联创建时新增的那行代码（后面我们会说，实际上这行代码表示一个变量的声明），你的App启动时，系统尝试把这个关联关系启用起来，发现代码中缺失了那一行，因此报错。</p>
 <blockquote>
 <p>以上用<code>firstLabel</code>这个错误的关联举例介绍只是示意性地告诉你，你的app出<code>this class is not key value coding-compliant for the key XXX</code>这样的错误时应该怎么去找到错误。</p>
 </blockquote>
 <p>类似的错误还可能有另一种形式，你可能也遇到了，我们尝试造出这个错误来：把<code>changeLabel()</code>这个函数删掉。注意，不是删一行，而是删掉这三行</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@IBAction</span> <span class="function"><span class="keyword">func</span> <span class="title">changeLabel</span><span class="params">()</span></span>&#123;</span><br><span class="line">    myLabel.text = <span class="string">"你好！"</span> + <span class="type">String</span>(arc4random_uniform(<span class="number">10</span>))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@IBAction</span> <span class="function"><span class="keyword">func</span> <span class="title">changeLabel</span><span class="params">()</span></span>&#123;</span><br><span class="line">    myLabel.text = <span class="string">&quot;你好！&quot;</span> + <span class="type">String</span>(arc4random_uniform(<span class="number">10</span>))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>然后我们重写运行app，你会发现模拟器（或真机）将你的app启动起来，看似没有异常。但如果你按一下那个button，Xcode又一次报错，这时Output里出现的错误信息就跟刚才不太一样了：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">018-08-26 16:32:47.194220+0800 HelloWorld[4475:613387] -[HelloWorld.ViewController changeLabel]: unrecognized selector sent to instance 0x7fe36aa080d0</span><br><span class="line">2018-08-26 16:32:47.199959+0800 HelloWorld[4475:613387] *** Terminating app due to uncaught exception &apos;NSInvalidArgumentException&apos;, reason: &apos;-[HelloWorld.ViewController changeLabel]: unrecognized selector sent to instance 0x7fe36aa080d0&apos;</span><br><span class="line">*** First throw call stack:</span><br><span class="line">(</span><br><span class="line">	0   CoreFoundation                      0x0000000107fc41e6 __exceptionPreprocess + 294</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">018-08-26 16:32:47.194220+0800 HelloWorld[4475:613387] -[HelloWorld.ViewController changeLabel]: unrecognized selector sent to instance 0x7fe36aa080d0</span><br><span class="line">2018-08-26 16:32:47.199959+0800 HelloWorld[4475:613387] *** Terminating app due to uncaught exception &#39;NSInvalidArgumentException&#39;, reason: &#39;-[HelloWorld.ViewController changeLabel]: unrecognized selector sent to instance 0x7fe36aa080d0&#39;</span><br><span class="line">*** First throw call stack:</span><br><span class="line">(</span><br><span class="line">	0   CoreFoundation                      0x0000000107fc41e6 __exceptionPreprocess + 294</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
 
 <p>还是看其中的reason：<code>reason: &#39;-[HelloWorld.ViewController changeLabel]: unrecognized selector sent to instance 0x7fe36aa080d0&#39;</code>。这句话实际是在说“系统在尝试执行<code>changeLabel</code>时找不到这段代码了。为什么系统会去执行这段代码？因为用户按了button，而button有个关联关系，是去触发<code>changeLabel()</code>，可惜这段代码刚被我们删掉了，因此系统出错。这个错误刚app刚开始运行时是不会出现的，直到用户点击按钮这件事情发生。当然，目前这个错误发生是因为我们手工删除了那几行代码，你也许没故意删，但也发生了类似的错误，排除错误的方法跟上面一样，可以把button上的关联删除掉，这样在button被按时系统就什么都不做了，也就不会出错。如果你的button被按确实需要做事，你只是在某个时刻不小心删掉了代码，那就把代码重写出来，然后用我们之前的教程说的方法重新建立关联。</p>
 <!-- 还有一种方式，我们可以选中`View Controller`，然后在`Connection Inspector`中就能看到其以下的所有组件的关联关系。  -->
 
 <h3 id="其他错误"><a href="#其他错误" class="headerlink" title="其他错误"></a>其他错误</h3><p>App开发过程中实际上会遇到各种各样的错误发生，即使再有经验的程序员也不可能不犯错，不犯错的只有机器。所以你完全不用害怕出现了错误。</p>
 <p>实际上我们也无法罗列所有错误及其解决方法，错误无处不在，比如在你运行前如果运行的目标设备选择错误（既不是某个模拟器也不是你的iPhone），Xcode也会报错。</p>
-<img src="http://cdn.nemoworks.info/swiftplaygrounds.fun/images/fixerrors/9.4.1/errors-wrongdevice-annotated.png">
+<img src="https://cdn.nemoworks.info/swiftplaygrounds.fun/images/fixerrors/9.4.1/errors-wrongdevice-annotated.png">
 
 
 <p>遇到错误可以找人问，也可以在网上找答案。一个合格的程序员是必须通过网络找到自己需要的答案的，但请不要去问百度。除了Google外，一个叫StackOverflow的网站是码农必须知道的。在那里，你可以“Learn, Share, Build”。</p>
-<p><a href="https://stackoverflow.com/" target="_blank" rel="noopener">https://stackoverflow.com/</a></p>
+<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/">https://stackoverflow.com/</a></p>
 <p>Take care.</p>
 
         </div>
